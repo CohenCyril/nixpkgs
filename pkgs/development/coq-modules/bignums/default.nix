@@ -5,6 +5,10 @@ let params =
       rev = "V8.8.0";
       sha256 = "1ymxyrvjygscxkfj3qkq66skl3vdjhb670rzvsvgmwrjkrakjnfg";
     };
+    v_8_9_0 = {
+      rev = "V8.9.0";
+      sha256 = "03qz1w2xb2j5p06liz5yyafl0fl9vprcqm6j0iwi7rxwghl00p01";
+    };
   in
   {
     "8.6" = {
@@ -16,7 +20,7 @@ let params =
       sha256 = "11c4sdmpd3l6jjl4v6k213z9fhrmmm1xnly3zmzam1wrrdif4ghl";
     };
     "8.8" = v_8_8_0;
-    "8.9" = v_8_8_0;
+    "8.9" = v_8_9_0;
   };
   param = params."${coq.coq-version}"
 ; in
