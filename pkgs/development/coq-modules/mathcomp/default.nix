@@ -24,7 +24,7 @@ let
   max-mathcomp-version = last (naturalSort (attrNames mathcomp-coq-versions));
   # mathcomp prefered version by decreasing order
   # (the first version in the list will be tried first)
-  mathcomp-version-preference = [ "1.8.0" "1.9.0" "1.7.0" "1.6.1" ];
+  mathcomp-version-preference = [ "1.9.0" "1.8.0" "1.7.0" "1.6.1" ];
 
   ##############################################################
   # COMPUTED using the configuration above (edit with caution) #
