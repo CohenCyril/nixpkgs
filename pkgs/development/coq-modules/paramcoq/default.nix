@@ -3,16 +3,20 @@
 let params =
   {
     "8.7" = {
-      version = "1.1.1+coq8.7";
-      sha256 = "1i7b5pkx46zf9il2xikbp3rhpnh3wdfbhw5yxcf9yk28ky9s0a0l";
+      version = "1.1.2+coq8.7";
+      sha256 = "09n0ky7ldb24by7yf5j3hv410h85x50ksilf7qacl7xglj4gy5hj";
     };
     "8.8" = {
-      version = "1.1.1";
-      sha256 = "0b07zvgm9cx6j2d9631zmqjs6sf30kiqg6k15xk3km7n80d53wfh";
+      version = "1.1.2+coq8.8";
+      sha256 = "0rc4lshqvnfdsph98gnscvpmlirs9wx91qcvffggg73xw0p1g9s0";
     };
     "8.9" = {
-      version = "1.1.1+coq8.9";
-      sha256 = "002xabhjlph394vydw3dx8ipv5ry2nq3py4440bk9a18ljx0w6ll";
+      version = "1.1.2+coq8.9";
+      sha256 = "1jjzgpff09xjn9kgp7w69r096jkj0x2ksng3pawrmhmn7clwivbk";
+    };
+    "8.10" = {
+      version = "1.1.2+coq8.10";
+      sha256 = "1lq1mw15w4yky79qg3rm0mpzqi2ir51b6ak04ismrdr7ixky49y8";
     };
   };
   param = params.${coq.coq-version};

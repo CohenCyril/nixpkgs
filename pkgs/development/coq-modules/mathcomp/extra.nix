@@ -7,6 +7,7 @@ let
 param = {
   finmap = {
     version-sha256 = {
+      "1.3.4" = "0f5a62ljhixy5d7gsnwd66gf054l26k3m79fb8nz40i2mgp6l9ii";
       "1.2.1" = "0jryb5dq8js3imbmwrxignlk5zh8gwfb1wr4b1s7jbwz410vp7zf";
       "1.2.0" = "0b6wrdr0d7rcnv86s37zm80540jl2wmiyf39ih7mw3dlwli2cyj4";
       "1.1.0" = "05df59v3na8jhpsfp7hq3niam6asgcaipg2wngnzxzqnl86srp2a";
@@ -20,6 +21,7 @@ param = {
   };
   multinomials = {
     version-sha256 = {
+      "1.4" = "0vnkirs8iqsv8s59yx1fvg1nkwnzydl42z3scya1xp1b48qkgn0p";
       "1.3" = "0l3vi5n094nx3qmy66hsv867fnqm196r8v605kpk24gl0aa57wh4";
       "1.2" = "1mh1w339dslgv4f810xr1b8v2w7rpx6fgk9pz96q0fyq49fw2xcq";
       "1.1" = "1q8alsm89wkc0lhcvxlyn0pd8rbl2nnxg81zyrabpz610qqjqc3s";
@@ -51,13 +53,13 @@ param = {
     };
     description = "CoqEAL - The Coq Effective Algebra Library";
     owner = "CoqEAL";
-    compatibleCoqVersions = flip elem ["8.7" "8.8" "8.9"];
+    compatibleCoqVersions = flip elem ["8.7" "8.8" "8.9" "8.10"];
     license = stdenv.lib.licenses.mit;
   };
 };
 versions = {
   "1.9.0" = {
-    finmap.version = "1.2.1";
+    finmap.version = "1.3.4";
     bigenough.version = "1.0.0";
     analysis = {
       version = "0.2.2";
@@ -65,7 +67,7 @@ versions = {
       extra-deps = with coqPackages; [ mathcomp_1_9-finmap mathcomp_1_9-bigenough ];
     };
     multinomials = {
-      version = "1.3";
+      version = "1.4";
       core-deps = with coqPackages; [ mathcomp-algebra_1_9 ];
       extra-deps = with coqPackages; [ mathcomp_1_9-finmap mathcomp_1_9-bigenough ];
     };
@@ -74,9 +76,16 @@ versions = {
       core-deps = with coqPackages; [ mathcomp-field_1_9 ];
       extra-deps = with coqPackages; [ mathcomp_1_9-bigenough ];
     };
-  };
+
+    coqeal = {
+      version = "1.0.0";
+      core-deps = with coqPackages; [ mathcomp-algebra_1_9 ];
+      extra-deps = with coqPackages; [ bignums paramcoq mathcomp_1_9-multinomials ];
+    };
+  }; 
+
   "1.8.0" = {
-    finmap.version = "1.2.1";
+    finmap.version = "1.3.4";
     bigenough.version = "1.0.0";
     analysis = {
       version = "0.2.2";
@@ -84,7 +93,7 @@ versions = {
       extra-deps = with coqPackages; [ mathcomp_1_8-finmap mathcomp_1_8-bigenough ];
     };
     multinomials = {
-      version = "1.3";
+      version = "1.4";
       core-deps = with coqPackages; [ mathcomp-algebra_1_8 ];
       extra-deps = with coqPackages; [ mathcomp_1_8-finmap mathcomp_1_8-bigenough ];
     };
