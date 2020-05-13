@@ -244,7 +244,12 @@ let
 
     eliom = callPackage ../development/ocaml-modules/eliom { };
 
-    elpi = callPackage ../development/ocaml-modules/elpi { };
+    elpi = let former = { inherit ppxfind ocaml-migrate-parsetree ppx_deriving ppx_tools_versioned; }; in
+           let ppx_deriving = former.ppx_deriving.override { inherit ppxfind ocaml-migrate-parsetree; };
+               ppxfind = former.ppxfind.override { version = "1.4"; inherit ocaml-migrate-parsetree; };
+               ocaml-migrate-parsetree = former.ocaml-migrate-parsetree.override { version = "1.7.3"; };
+               ppx_tools_versioned = former.ppx_tools_versioned.override { inherit ocaml-migrate-parsetree; };
+           in callPackage ../development/ocaml-modules/elpi { inherit ppx_deriving ppx_tools_versioned; };
 
     encore = callPackage ../development/ocaml-modules/encore { };
 
