@@ -240,7 +240,7 @@ let
           "1.10.0"       = v4 // {mathcomp-finmap = "1.4.0+coq-8.11";};
         };
         "8.10" = {
-          "1.11.0+beta1" = v5;
+          "1.11.0+beta1" = removeAttrs v5 ["coqeal"];
           "1.10.0"       = v4;
           "1.9.0"        = removeAttrs v3 ["coqeal"];
         };
@@ -260,8 +260,8 @@ let
         "8.7" = {
           "1.11.0+beta1" = removeAttrs v5 ["mathcomp-analysis"];
           "1.10.0"       = removeAttrs v4 ["mathcomp-analysis"];
-          "1.9.0"        = removeAttrs v3 ["coqeal"];
-          "1.8.0"        = removeAttrs v2 ["coqeal"];
+          "1.9.0"        = removeAttrs v3 ["coqeal" "mathcomp-analysis"];
+          "1.8.0"        = removeAttrs v2 ["coqeal" "mathcomp-analysis"];
           "1.7.0"        = removeAttrs v1 ["coqeal" "multinomials"];
         };
       };
