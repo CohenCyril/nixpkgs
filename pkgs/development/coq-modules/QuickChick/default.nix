@@ -5,14 +5,14 @@ mkCoqDerivation {
   pname = "QuickChick";
   owner = "QuickChick";
   defaultVersion = with versions; switch [ coq.coq-version ssreflect.version ] [
-      { cases = [ "8.12" pred.true  ]; out = "1.4.0"; }
-      { cases = [ "8.11" pred.true  ]; out = "1.3.2"; }
-      { cases = [ "8.10" pred.true  ]; out = "1.2.1"; }
-      { cases = [ "8.9"  pred.true  ];  out = "1.1.0"; }
-      { cases = [ "8.8"  pred.true  ];  out = "20190311"; }
+      { cases = [ "8.12" preds.true  ]; out = "1.4.0"; }
+      { cases = [ "8.11" preds.true  ]; out = "1.3.2"; }
+      { cases = [ "8.10" preds.true  ]; out = "1.2.1"; }
+      { cases = [ "8.9"  preds.true  ];  out = "1.1.0"; }
+      { cases = [ "8.8"  preds.true  ];  out = "20190311"; }
       { cases = [ "8.7"  isLe "1.8" ];  out = "1.0.0"; }
-      { cases = [ "8.6"  pred.true  ];  out = "20171102"; }
-      { cases = [ "8.5"  pred.true  ];  out = "20170512"; }
+      { cases = [ "8.6"  preds.true  ];  out = "20171102"; }
+      { cases = [ "8.5"  preds.true  ];  out = "20170512"; }
     ] null;
   release."1.4.0".sha256    = "068p48pm5yxjc3yv8qwzp25bp9kddvxj81l31mjkyx3sdrsw3kyc";
   release."1.3.2".sha256    = "0lciwaqv288dh2f13xk2x0lrn6zyrkqy6g4yy927wwzag2gklfrs";
