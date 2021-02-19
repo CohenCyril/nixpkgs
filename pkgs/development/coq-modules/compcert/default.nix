@@ -28,7 +28,7 @@ let compcert = mkCoqDerivation rec {
   };
 
   nativeBuildInputs = [ makeWrapper ];
-  buildInputs = with ocamlPackages; [ ocaml findlib menhir menhirLib ] ++ [ coq coq2html ];
+  buildInputs = with ocamlPackages; [ ocaml findlib menhir menhirLib ] ++ [ coq2html ];
   propagatedBuildInputs = [ flocq ];
 
   enableParallelBuilding = true;
