@@ -4,13 +4,14 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 let
   derivation = mkCoqDerivation {
     pname = "bignums";
     owner = "rocq-community";
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = case: out: { inherit case out; };

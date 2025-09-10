@@ -5,6 +5,7 @@
   mathcomp-fingroup,
   lib,
   version ? null,
+  origin ? null,
 }@args:
 
 mkCoqDerivation {
@@ -16,7 +17,7 @@ mkCoqDerivation {
   pname = "tarjan";
   owner = "math-comp";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

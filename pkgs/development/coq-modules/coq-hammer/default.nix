@@ -3,10 +3,11 @@
   coq,
   coq-hammer-tactics,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
-  inherit version;
+  inherit version origin;
   pname = "coq-hammer";
   inherit (coq-hammer-tactics)
     owner

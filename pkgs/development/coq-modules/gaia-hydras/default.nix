@@ -7,6 +7,7 @@
   mathcomp-zify,
   mathcomp,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -18,7 +19,7 @@ mkCoqDerivation {
   release."0.9".sha256 = "sha256-wlK+154owQD/03FB669KCjyQlL2YOXLCi0KLSo0DOwc=";
   releaseRev = (v: "v${v}");
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch

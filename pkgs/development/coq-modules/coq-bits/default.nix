@@ -6,12 +6,13 @@
   mathcomp-algebra-tactics,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "coq-bits";
   repo = "bits";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch

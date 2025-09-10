@@ -5,6 +5,7 @@
   mathcomp-real-closed,
   lib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -16,7 +17,7 @@ mkCoqDerivation {
   pname = "abel";
   owner = "math-comp";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

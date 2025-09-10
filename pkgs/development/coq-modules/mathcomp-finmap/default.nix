@@ -4,6 +4,7 @@
   mathcomp-boot,
   lib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -14,7 +15,7 @@ mkCoqDerivation {
   ];
   pname = "finmap";
   owner = "math-comp";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

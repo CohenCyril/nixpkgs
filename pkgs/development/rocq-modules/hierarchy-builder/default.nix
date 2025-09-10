@@ -4,13 +4,14 @@
   rocq-core,
   rocq-elpi,
   version ? null,
+  origin ? null,
 }:
 
 let
   hb = mkRocqDerivation {
     pname = "hierarchy-builder";
     owner = "math-comp";
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = case: out: { inherit case out; };

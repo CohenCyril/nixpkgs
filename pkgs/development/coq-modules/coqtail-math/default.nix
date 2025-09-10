@@ -3,12 +3,13 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "coqtail-math";
   owner = "coq-community";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

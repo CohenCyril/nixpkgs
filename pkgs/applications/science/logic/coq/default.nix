@@ -27,7 +27,8 @@
   makeDesktopItem,
   copyDesktopItems,
   csdp ? null,
-  version,
+  version ? null,
+  origin ? null,
   coq-version ? null,
 }@args:
 let
@@ -85,12 +86,16 @@ let
       }
       {
         inherit release releaseRev;
+        combined = true;
         location = {
           owner = "coq";
           repo = "coq";
         };
       }
-      args.version;
+      {
+        inherit (args) origin version;
+        pname = "coq";
+      };
   version = fetched.version;
   coq-version =
     args.coq-version or (if version != "dev" then lib.versions.majorMinor version else "dev");
@@ -104,7 +109,7 @@ let
     substituteInPlace plugins/micromega/coq_micromega.ml --replace "System.is_in_system_path \"csdp\"" "true"
   '';
   ocamlPackages =
-    if customOCamlPackages != null then
+    if !isNull customOCamlPackages then
       customOCamlPackages
     else
       lib.switch coq-version [

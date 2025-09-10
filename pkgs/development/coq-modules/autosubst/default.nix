@@ -5,6 +5,7 @@
   mathcomp-boot,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -16,7 +17,7 @@ mkCoqDerivation {
   release."1.8".sha256 = "sha256-n0lD8D+tjqkDDjFiE4CggxczOPS5TkEnxpB3zEwWZ2I=";
   release."1.9".sha256 = "sha256-XiLZjMc+1iwRGOstfLm/WQRF6FTdX6oJr5urn3wmLlA=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

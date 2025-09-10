@@ -7,6 +7,7 @@
   mathcomp-fingroup,
   paramcoq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -18,7 +19,7 @@ mkCoqDerivation {
   release."0.6".sha256 = "1dri4sisa7mhclf8w4kw7ixs5zxm8xyjr034r1377p96rdk3jj0j";
   releaseRev = (v: "v${v}");
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

@@ -3,6 +3,7 @@
   mkRocqDerivation,
   lib,
   version ? null,
+  origin ? null,
 }:
 mkRocqDerivation {
 
@@ -11,7 +12,7 @@ mkRocqDerivation {
   owner = "rocq-prover";
   opam-name = "rocq-stdlib";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

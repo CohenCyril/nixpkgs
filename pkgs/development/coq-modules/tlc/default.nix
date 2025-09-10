@@ -4,12 +4,13 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
   pname = "tlc";
   owner = "charguer";
-  inherit version;
+  inherit version origin;
   displayVersion = {
     tlc = false;
   };

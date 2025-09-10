@@ -5,6 +5,7 @@
   mathcomp-bigenough,
   lib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -15,7 +16,7 @@ mkCoqDerivation {
   ];
   pname = "real-closed";
   owner = "math-comp";
-  inherit version;
+  inherit version origin;
   release = {
     "2.0.3".sha256 = "sha256-heZ7aZ7TO9YNAESIvbAc1qqzO91xMyLAox8VKueIk/s=";
     "2.0.2".sha256 = "sha256-hBo9JMtmXDYBmf5ihKGksQLHv3c0+zDBnd8/aI2V/ao=";

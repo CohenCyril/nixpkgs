@@ -5,13 +5,14 @@
   parsec,
   MenhirLib,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
   pname = "json";
   owner = "liyishuai";
   repo = "coq-json";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let

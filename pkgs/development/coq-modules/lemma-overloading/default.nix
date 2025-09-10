@@ -4,11 +4,12 @@
   coq,
   mathcomp-ssreflect,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "lemma-overloading";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     with lib.versions;

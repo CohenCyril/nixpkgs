@@ -4,13 +4,14 @@
   lib,
   mkCoqDerivation,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "coqutil";
   owner = "mit-plv";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.version [

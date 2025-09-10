@@ -5,6 +5,7 @@
   compcert,
   ITree,
   version ? null,
+  origin ? null,
 }:
 
 # A few modules that are not built and installed by default
@@ -31,7 +32,7 @@ mkCoqDerivation {
   };
   owner = "PrincetonUniversity";
   repo = "VST";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

@@ -4,13 +4,14 @@
   coq,
   bignums,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
 
   pname = "coqprime";
   owner = "thery";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

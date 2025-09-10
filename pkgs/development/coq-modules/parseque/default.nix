@@ -3,6 +3,7 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 with lib;
@@ -12,7 +13,7 @@ let
     repo = "parseque";
     owner = "rocq-community";
 
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = case: out: { inherit case out; };
@@ -36,7 +37,7 @@ in
 # this is just a wrapper for rocqPackages.parseque for Rocq >= 9.0
 if coq.rocqPackages ? parseque then
   coq.rocqPackages.parseque.override {
-    inherit version;
+    inherit version origin;
     inherit (coq.rocqPackages) rocq-core;
   }
 else

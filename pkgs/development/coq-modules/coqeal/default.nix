@@ -8,6 +8,7 @@
   mathcomp-real-closed,
   lib,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -15,7 +16,7 @@ let
 
     pname = "CoqEAL";
 
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = coq: mc: out: {

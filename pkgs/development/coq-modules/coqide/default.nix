@@ -8,11 +8,12 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation rec {
   pname = "coqide";
-  inherit version;
+  inherit version origin;
 
   inherit (coq) src;
   release."${coq.version}" = { };

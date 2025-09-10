@@ -3,6 +3,7 @@
   mkCoqDerivation,
   lib,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -13,7 +14,7 @@ let
     owner = "coq";
     opam-name = "coq-stdlib";
 
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = case: out: { inherit case out; };
@@ -47,7 +48,7 @@ in
 # this is just a wrapper for rocqPackages.stdlib for Rocq >= 9.0
 if coq.rocqPackages ? stdlib then
   coq.rocqPackages.stdlib.override {
-    inherit version;
+    inherit version origin;
     inherit (coq.rocqPackages) rocq-core;
   }
 else

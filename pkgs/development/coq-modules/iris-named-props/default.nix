@@ -3,13 +3,14 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
   iris,
 }:
 
 mkCoqDerivation {
   pname = "iris-named-props";
   owner = "tchajed";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.version [

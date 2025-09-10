@@ -6,12 +6,13 @@
   InfSeqExt,
   ssreflect,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "verdi";
   owner = "uwplse";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

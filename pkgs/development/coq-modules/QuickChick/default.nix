@@ -6,6 +6,7 @@
   ExtLib,
   simple-io,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -14,7 +15,7 @@ in
 (mkCoqDerivation {
   pname = "QuickChick";
   owner = "QuickChick";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

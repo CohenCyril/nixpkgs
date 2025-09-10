@@ -5,6 +5,7 @@
   equations,
   LibHyps,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
@@ -17,7 +18,7 @@
   release."0.9".sha256 = "sha256-wlK+154owQD/03FB669KCjyQlL2YOXLCi0KLSo0DOwc=";
   releaseRev = (v: "v${v}");
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };
@@ -50,7 +51,7 @@
   (
     o:
     let
-      inherit (o) version;
+      inherit (o) version origin;
     in
     {
       propagatedBuildInputs = [

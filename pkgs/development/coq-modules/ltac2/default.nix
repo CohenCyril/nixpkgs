@@ -3,12 +3,13 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "ltac2";
   owner = "coq";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

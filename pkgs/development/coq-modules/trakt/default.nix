@@ -5,6 +5,7 @@
   coq-elpi,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -16,7 +17,7 @@ mkCoqDerivation {
   release."1.2".sha256 = "sha256-YQRtK2MjjsMlytdu9iutUDKhwOo4yWrSwhyBb2zNHoE=";
   release."1.2+8.13".sha256 = "sha256-hozms4sPSMr4lFkJ20x+uW9Wqt067bifnPQxdGyKhQQ=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch

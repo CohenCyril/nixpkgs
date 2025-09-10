@@ -6,11 +6,12 @@
   math-classes,
   coq-elpi,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
   pname = "corn";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

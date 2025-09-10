@@ -7,6 +7,7 @@
   interval,
   lib,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
@@ -16,7 +17,7 @@
   ];
   pname = "infotheo";
   owner = "affeldt-aist";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let

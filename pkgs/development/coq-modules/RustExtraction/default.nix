@@ -5,6 +5,7 @@
   coq,
   metacoq,
   version ? null,
+  origin ? null,
 }:
 
 with lib;
@@ -14,7 +15,7 @@ mkCoqDerivation {
   owner = "AU-COBRA";
   domain = "github.com";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

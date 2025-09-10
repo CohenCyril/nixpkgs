@@ -11,6 +11,7 @@
   stdenv,
   tools ? stdenv.cc,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -34,7 +35,7 @@ let
     pname = "compcert";
     owner = "AbsInt";
 
-    inherit version;
+    inherit version origin;
     releaseRev = v: "v${v}";
 
     defaultVersion =

@@ -4,6 +4,7 @@
   coq,
   mathcomp,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -20,7 +21,7 @@ mkCoqDerivation {
   release."1.4.0".sha256 = "sha256-8TtNPEbp3uLAH+MjOKiTZHOjPb3vVYlabuqsdWxbg80=";
   release."1.4.1".sha256 = "sha256-0UASpo9CdpvidRv33BDWrevo+NSOhxLQFPCJAWPXf+s=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

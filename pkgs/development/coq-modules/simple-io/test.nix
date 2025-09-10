@@ -6,7 +6,7 @@
 
 stdenv.mkDerivation {
   pname = "coq-simple-io-test";
-  inherit (simple-io) src version;
+  inherit (simple-io) src version origin;
   nativeCheckInputs = [
     coq
     simple-io

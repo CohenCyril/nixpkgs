@@ -3,11 +3,12 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "high-school-geometry";
-  inherit version;
+  inherit version origin;
   repo = "HighSchoolGeometry";
   defaultVersion =
     with lib.versions;

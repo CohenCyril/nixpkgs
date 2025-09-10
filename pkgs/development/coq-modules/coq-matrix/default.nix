@@ -3,11 +3,12 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 mkCoqDerivation {
   owner = "zhengpushi";
   pname = "CoqMatrix";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.version [

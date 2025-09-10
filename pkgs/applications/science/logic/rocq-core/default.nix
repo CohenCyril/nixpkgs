@@ -15,7 +15,8 @@
   ocamlPackages_4_14,
   ncurses,
   csdp ? null,
-  version,
+  version ? null,
+  origin ? null,
   rocq-version ? null,
 }@args:
 let
@@ -38,12 +39,16 @@ let
       }
       {
         inherit release releaseRev;
+        combined = true;
         location = {
-          owner = "coq";
-          repo = "coq";
+          owner = "rocq-prover";
+          repo = "rocq";
         };
       }
-      args.version;
+      {
+        inherit (args) origin version;
+        pname = "rocq";
+      };
   version = fetched.version;
   rocq-version =
     args.rocq-version or (if version != "dev" then lib.versions.majorMinor version else "dev");

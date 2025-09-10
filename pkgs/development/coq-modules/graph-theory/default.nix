@@ -8,6 +8,7 @@
   fourcolor,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -22,7 +23,7 @@ mkCoqDerivation {
 
   releaseRev = v: "v${v}";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

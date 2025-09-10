@@ -4,12 +4,13 @@
   rocq-core,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkRocqDerivation {
   pname = "bignums";
   owner = "rocq-community";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

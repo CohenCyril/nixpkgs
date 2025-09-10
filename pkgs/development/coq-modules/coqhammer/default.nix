@@ -9,10 +9,11 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
-  inherit version;
+  inherit version origin;
   pname = "coqhammer";
   owner = "lukaszcz";
   defaultVersion =

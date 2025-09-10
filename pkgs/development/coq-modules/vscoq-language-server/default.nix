@@ -6,6 +6,7 @@
   adwaita-icon-theme,
   wrapGAppsHook3,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -42,36 +43,41 @@ let
     release."2.2.6".rev = "v2.2.6";
     release."2.2.6".sha256 = "sha256-J8nRTAwN6GBEYgqlXa2kkkrHPatXsSObQg9QUQoZhgE=";
     inherit location;
+    combined = true;
   });
-  fetched = fetch (if version != null then version else defaultVersion);
+  fetched = fetch {
+    inherit origin version defaultVersion;
+    pname = "vscoq-language-server";
+  };
 in
 ocamlPackages.buildDunePackage {
   pname = "vscoq-language-server";
   inherit (fetched) version;
   src = "${fetched.src}/language-server";
   nativeBuildInputs = [ coq ];
-  buildInputs = [
-    coq
-    glib
-    adwaita-icon-theme
-    wrapGAppsHook3
-  ]
-  ++ (with ocamlPackages; [
-    findlib
-    lablgtk3-sourceview3
-    yojson
-    zarith
-    ppx_inline_test
-    ppx_assert
-    ppx_sexp_conv
-    ppx_deriving
-    ppx_import
-    sexplib
-    ppx_yojson_conv
-    lsp
-    sel
-    ppx_optcomp
-  ]);
+  buildInputs =
+    [
+      coq
+      glib
+      adwaita-icon-theme
+      wrapGAppsHook3
+    ]
+    ++ (with ocamlPackages; [
+      findlib
+      lablgtk3-sourceview3
+      yojson
+      zarith
+      ppx_inline_test
+      ppx_assert
+      ppx_sexp_conv
+      ppx_deriving
+      ppx_import
+      sexplib
+      ppx_yojson_conv
+      lsp
+      sel
+      ppx_optcomp
+    ]);
 
   meta =
     with lib;

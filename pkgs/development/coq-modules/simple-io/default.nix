@@ -5,13 +5,14 @@
   coq,
   ExtLib,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
   pname = "simple-io";
   owner = "Lysxia";
   repo = "coq-simple-io";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

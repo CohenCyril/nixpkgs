@@ -5,6 +5,7 @@
   coq,
   coq-lsp,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -109,7 +110,7 @@ in
         ppx_deriving = coq.ocamlPackages.ppx_deriving.override { version = "5.2.1"; };
       in
       let
-        inherit (o) version;
+        inherit (o) version origin;
       in
       {
         src = fetchzip {

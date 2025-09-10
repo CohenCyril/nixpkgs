@@ -4,6 +4,7 @@
   stdlib,
   rocq-core,
   version ? null,
+  origin ? null,
 }:
 
 with lib;
@@ -12,7 +13,7 @@ mkRocqDerivation {
   repo = "parseque";
   owner = "rocq-community";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with versions;
     switch

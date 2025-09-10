@@ -5,6 +5,7 @@
   aac-tactics,
   mathcomp-boot,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -25,7 +26,7 @@ mkCoqDerivation {
   release."1.7.2".sha256 = "sha256-f4oNjXspNMEz3AvhIeYO3avbUa1AThoC9DbcHMb5A2o=";
   release."1.7.1".sha256 = "sha256-WWVMcR6z8rT4wzZPb8SlaVWGe7NC8gScPqawd7bltQA=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

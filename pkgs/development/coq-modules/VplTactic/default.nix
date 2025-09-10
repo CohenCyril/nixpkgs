@@ -4,11 +4,13 @@
   coq,
   Vpl,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "VplTactic";
   owner = "VERIMAG-Polyhedra";
+  inherit version origin;
   defaultVersion = if lib.versions.isEq "8.9" coq.version then "0.5" else null;
 
   release."0.5".rev = "487e3aff8446bed2c5116cefc7d71d98a06e85de";

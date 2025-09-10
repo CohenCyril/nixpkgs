@@ -7,13 +7,14 @@
   flocq,
   bignums,
   version ? null,
+  origin ? null,
 }:
 
 let
   self = mkCoqDerivation {
     pname = "vcfloat";
     owner = "VeriNum";
-    inherit version;
+    inherit version origin;
     sourceRoot = "${self.src.name}/vcfloat";
     postPatch = ''
       coq_makefile -o Makefile -f _CoqProject *.v

@@ -7,6 +7,7 @@
   coq-elpi,
   mathcomp-zify,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -16,7 +17,7 @@ mkCoqDerivation {
   ];
   pname = "algebra-tactics";
   owner = "math-comp";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let

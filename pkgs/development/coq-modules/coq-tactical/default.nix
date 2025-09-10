@@ -3,13 +3,14 @@
   lib,
   mkCoqDerivation,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "coq-tactical";
   owner = "tchajed";
 
-  inherit version;
+  inherit version origin;
   displayVersion.coq-tactical = v: "unstable-${v}";
   defaultVersion =
     with lib.versions;

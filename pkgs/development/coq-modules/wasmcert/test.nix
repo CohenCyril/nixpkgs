@@ -6,7 +6,7 @@
 
 stdenv.mkDerivation {
   pname = "wasmcert-interpreter-test";
-  inherit (wasmcert) src version;
+  inherit (wasmcert) src version origin;
   nativeCheckInputs = [
     wasmcert
     coq

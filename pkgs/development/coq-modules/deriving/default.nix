@@ -3,6 +3,7 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
   ssreflect,
   stdlib,
 }:
@@ -11,7 +12,7 @@ mkCoqDerivation {
   pname = "deriving";
   owner = "arthuraa";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

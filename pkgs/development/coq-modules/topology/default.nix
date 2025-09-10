@@ -4,6 +4,7 @@
   coq,
   zorns-lemma,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -20,7 +21,7 @@ mkCoqDerivation {
   release."8.7.0".sha256 = "sha256-qcZQKvMRs5wWIAny8ciF9TrmEQfKKO9fWhwIRL+s7VA=";
   release."8.6.0".sha256 = "sha256-eu/dBEFo3y6vnXlJljUD4hds6+qgAPQVvsuspyGHcj8=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

@@ -3,12 +3,13 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "Vpl";
   owner = "VERIMAG-Polyhedra";
-  inherit version;
+  inherit version origin;
 
   defaultVersion = if lib.versions.range "8.8" "8.9" coq.coq-version then "0.5" else null;
 

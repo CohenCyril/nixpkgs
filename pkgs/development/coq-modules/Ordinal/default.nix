@@ -3,11 +3,12 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 mkCoqDerivation {
   pname = "Ordinal";
   owner = "snu-sf";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.version [

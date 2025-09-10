@@ -4,6 +4,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -47,7 +48,7 @@ let
 in
 
 mkCoqDerivation {
-  inherit version;
+  inherit version origin;
   pname = "coq-hammer-tactics";
 
   inherit

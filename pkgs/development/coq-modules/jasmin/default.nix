@@ -6,13 +6,14 @@
   mathcomp-algebra-tactics,
   mathcomp-word,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "jasmin";
   owner = "jasmin-lang";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

@@ -5,12 +5,13 @@
   mathcomp-algebra,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "fcsl-pcm";
   owner = "imdea-software";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let

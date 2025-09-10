@@ -7,6 +7,7 @@
   cvc5,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 # Broken since https://github.com/NixOS/nixpkgs/pull/354627, temporarily disactivated
@@ -41,7 +42,7 @@ mkCoqDerivation {
 
   releaseRev = v: v;
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.version [

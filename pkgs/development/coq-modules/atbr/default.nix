@@ -4,11 +4,12 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "atbr";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       inherit (lib.versions) range;

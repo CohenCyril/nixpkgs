@@ -10,13 +10,14 @@
   bignums ? null,
   gnuplot_qt,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation rec {
   pname = "interval";
   owner = "coqinterval";
   domain = "gitlab.inria.fr";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

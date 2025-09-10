@@ -267,10 +267,10 @@ let
       ) (lib.attrNames set)
     );
   mkCoq =
-    version: rp:
+    origin: rp:
     callPackage ../applications/science/logic/coq {
       inherit
-        version
+        origin
         ocamlPackages_4_09
         ocamlPackages_4_10
         ocamlPackages_4_12

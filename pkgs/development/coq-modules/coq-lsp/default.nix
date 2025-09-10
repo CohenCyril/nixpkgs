@@ -5,6 +5,7 @@
   serapi,
   makeWrapper,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation rec {
@@ -21,7 +22,7 @@
   release."0.2.3+8.20".sha256 = "sha256-TUVS8jkgf1MMOOx5y70OaeZkdIgdgmyGQ2/zKxeplEk=";
   release."0.2.3+9.0".sha256 = "sha256-eZMM4gYRXQroEIKz6XlffyHNYryEF5dIeIoVbEulh6M=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

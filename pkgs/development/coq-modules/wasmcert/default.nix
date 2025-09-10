@@ -9,6 +9,7 @@
   compcert,
   ExtLib,
   version ? null,
+  origin ? null,
 }:
 
 with lib;
@@ -17,7 +18,7 @@ mkCoqDerivation {
   repo = "WasmCert-Coq";
   owner = "WasmCert";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

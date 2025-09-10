@@ -10,6 +10,7 @@
   coqPackages,
   coq,
   version ? null,
+  origin ? null,
 }@args:
 
 let
@@ -129,6 +130,7 @@ let
       derivation = mkCoqDerivation ({
         inherit
           version
+          origin
           pname
           defaultVersion
           release

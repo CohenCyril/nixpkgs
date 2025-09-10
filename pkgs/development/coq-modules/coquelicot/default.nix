@@ -6,13 +6,14 @@
   stdlib,
   mathcomp-boot,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "coquelicot";
   owner = "coquelicot";
   domain = "gitlab.inria.fr";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

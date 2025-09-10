@@ -6,13 +6,14 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "flocq";
   owner = "flocq";
   domain = "gitlab.inria.fr";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

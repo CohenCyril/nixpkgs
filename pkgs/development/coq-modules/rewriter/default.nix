@@ -4,12 +4,13 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "rewriter";
   owner = "mit-plv";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       inherit (lib.versions) range;

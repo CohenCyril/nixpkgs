@@ -4,6 +4,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
@@ -11,7 +12,7 @@
   owner = "mattam82";
   repo = "Coq-Equations";
   opam-name = "rocq-equations";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

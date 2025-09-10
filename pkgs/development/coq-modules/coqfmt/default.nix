@@ -5,6 +5,7 @@
   lib,
   mkCoqDerivation,
   version ? null,
+  origin ? null,
   makeWrapper,
 }:
 
@@ -12,7 +13,7 @@ mkCoqDerivation rec {
   pname = "coqfmt";
   owner = "toku-sa-n";
 
-  inherit version;
+  inherit version origin;
   displayVersion.coqfmt = v: "master-${v}";
 
   release."master" = {

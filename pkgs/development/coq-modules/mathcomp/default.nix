@@ -23,6 +23,7 @@
   hierarchy-builder,
   stdlib,
   version ? null,
+  origin ? null,
 }@args:
 
 let
@@ -113,6 +114,7 @@ let
         {
           inherit
             version
+            origin
             pname
             defaultVersion
             release

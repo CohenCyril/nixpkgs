@@ -9,13 +9,14 @@
   mathcomp-algebra-tactics,
   lib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
 
   pname = "apery";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

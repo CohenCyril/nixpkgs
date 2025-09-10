@@ -4,6 +4,7 @@
   autoreconfHook,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -13,7 +14,7 @@ in
 (mkCoqDerivation {
   pname = "dpdgraph";
   repo = "coq-dpdgraph";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

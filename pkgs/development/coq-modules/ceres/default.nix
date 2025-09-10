@@ -4,6 +4,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -12,7 +13,7 @@ mkCoqDerivation {
   repo = "coq-ceres";
   owner = "Lysxia";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

@@ -14,7 +14,7 @@ in
 
 stdenv.mkDerivation {
   pname = "coq${coq.coq-version}-itauto-test";
-  inherit (itauto) src version;
+  inherit (itauto) src version origin;
 
   nativeCheckInputs = [
     coq

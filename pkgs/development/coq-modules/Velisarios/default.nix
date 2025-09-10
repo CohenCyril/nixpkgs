@@ -3,12 +3,13 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "Velisarios";
   owner = "vrahli";
-  inherit version;
+  inherit version origin;
   defaultVersion = if lib.versions.range "8.6" "8.8" coq.coq-version then "20180221" else null;
 
   release."20180221".rev = "e1eee1f10d5d46331a560bd8565ac101229d0d6b";

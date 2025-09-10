@@ -3,6 +3,7 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -12,7 +13,7 @@ mkCoqDerivation {
   release."8.12.0".rev = "v8.12.0";
   release."8.12.0".sha256 = "sha256-0xBrw9+4g14niYdNqp0nx00fPJoSSnaDSDEaIVpPfjs=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

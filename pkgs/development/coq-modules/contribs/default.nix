@@ -12,10 +12,11 @@ let
       contribVersion =
         {
           version ? null,
+          origin ? null,
         }:
         mkCoqDerivation (
           {
-            inherit pname version;
+            inherit pname version origin;
             owner = "coq-contribs";
             mlPlugin = true;
           }

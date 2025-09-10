@@ -5,6 +5,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
   elpi-version ? null,
 }:
 
@@ -37,7 +38,7 @@ let
     pname = "elpi";
     repo = "coq-elpi";
     owner = "LPCIC";
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = case: out: { inherit case out; };
@@ -157,7 +158,7 @@ in
 # this is just a wrapper for rocqPackages.stdlib for Rocq >= 9.0
 if coq.rocqPackages ? rocq-elpi then
   coq.rocqPackages.rocq-elpi.override {
-    inherit version elpi-version;
+    inherit version origin elpi-version;
     inherit (coq.rocqPackages) rocq-core;
   }
 else

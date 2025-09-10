@@ -6,13 +6,14 @@
   json,
   QuickChick,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "async-test";
   owner = "liyishuai";
   repo = "coq-async-test";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let

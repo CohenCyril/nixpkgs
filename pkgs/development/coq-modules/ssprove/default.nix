@@ -3,6 +3,7 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
   equations,
   mathcomp-boot,
   mathcomp-analysis,
@@ -16,7 +17,7 @@
   pname = "ssprove";
   owner = "SSProve";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

@@ -4,6 +4,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 let
@@ -41,6 +42,7 @@ let
     mkCoqDerivation {
       inherit
         version
+        origin
         pname
         defaultVersion
         release

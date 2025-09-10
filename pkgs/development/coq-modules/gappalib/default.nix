@@ -5,6 +5,7 @@
   coq,
   flocq,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -12,7 +13,7 @@ mkCoqDerivation {
   repo = "coq";
   owner = "gappa";
   domain = "gitlab.inria.fr";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

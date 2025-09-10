@@ -5,13 +5,14 @@
   stdlib,
   coq-elpi,
   version ? null,
+  origin ? null,
 }:
 
 let
   hb = mkCoqDerivation {
     pname = "hierarchy-builder";
     owner = "math-comp";
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = case: out: { inherit case out; };
@@ -76,7 +77,7 @@ in
 # this is just a wrapper for rocqPackages.hierarchy-builder for Rocq >= 9.0
 if coq.rocqPackages ? hierarchy-builder then
   coq.rocqPackages.hierarchy-builder.override {
-    inherit version;
+    inherit version origin;
     inherit (coq.rocqPackages) rocq-core;
     rocq-elpi = coq-elpi;
   }

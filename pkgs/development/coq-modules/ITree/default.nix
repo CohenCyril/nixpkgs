@@ -3,6 +3,7 @@
   mkCoqDerivation,
   coq,
   version ? null,
+  origin ? null,
   paco,
   ExtLib,
 }:
@@ -10,7 +11,7 @@
 mkCoqDerivation {
   pname = "InteractionTrees";
   owner = "DeepSpec";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

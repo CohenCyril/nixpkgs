@@ -7,6 +7,7 @@
   mathcomp-algebra,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -17,7 +18,7 @@ mkCoqDerivation {
   pname = "zify";
   repo = "mczify";
   owner = "math-comp";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let

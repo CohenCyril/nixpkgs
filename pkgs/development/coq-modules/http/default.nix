@@ -5,13 +5,14 @@
   QuickChick,
   async-test,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "http";
   owner = "liyishuai";
   repo = "coq-http";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let

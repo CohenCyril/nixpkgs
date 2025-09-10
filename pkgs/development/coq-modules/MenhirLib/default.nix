@@ -4,6 +4,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 let
   MenhirLib = mkCoqDerivation {
@@ -11,7 +12,7 @@ let
     owner = "fpottier";
     repo = "menhir";
     domain = "gitlab.inria.fr";
-    inherit version;
+    inherit version origin;
     defaultVersion =
       let
         case = case: out: { inherit case out; };

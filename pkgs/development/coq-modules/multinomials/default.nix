@@ -6,6 +6,7 @@
   mathcomp-bigenough,
   lib,
   version ? null,
+  origin ? null,
   useDune ? false,
 }@args:
 mkCoqDerivation {
@@ -18,7 +19,7 @@ mkCoqDerivation {
 
   owner = "math-comp";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = coq: mc: out: {

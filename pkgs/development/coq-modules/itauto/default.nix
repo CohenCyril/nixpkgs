@@ -5,6 +5,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 (mkCoqDerivation {
@@ -20,7 +21,7 @@
   release."8.15.0".sha256 = "sha256:10qpv4nx1p0wm9sas47yzsg9z22dhvizszfa21yff08a8fr0igya";
   release."8.14.0".sha256 = "sha256:1k6pqhv4dwpkwg81f2rlfg40wh070ks1gy9r0ravm2zhsbxqcfc9";
   release."8.13+no".sha256 = "sha256-gXoxtLcHPoyjJkt7WqvzfCMCQlh6kL2KtCGe3N6RC/A=";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

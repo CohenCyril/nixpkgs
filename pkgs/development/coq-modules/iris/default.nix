@@ -4,13 +4,14 @@
   coq,
   stdpp,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "iris";
   domain = "gitlab.mpi-sws.org";
   owner = "iris";
-  inherit version;
+  inherit version origin;
   defaultVersion =
     let
       case = case: out: { inherit case out; };

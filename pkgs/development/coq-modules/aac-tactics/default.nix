@@ -4,6 +4,7 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
@@ -30,7 +31,7 @@ mkCoqDerivation {
   release."8.6.1".sha256 = "sha256-PfovQ9xJnzr0eh/tO66yJ3Yp7A5E1SQG46jLIrrbZFg=";
   release."8.5.0".sha256 = "sha256-7yNxJn6CH5xS5w/zsXfcZYORa6e5/qS9v8PUq2o02h4=";
 
-  inherit version;
+  inherit version origin;
   defaultVersion =
     with lib.versions;
     lib.switch coq.coq-version [

@@ -4,11 +4,12 @@
   coq,
   stdlib,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "stdpp";
-  inherit version;
+  inherit version origin;
   domain = "gitlab.mpi-sws.org";
   owner = "iris";
   defaultVersion =

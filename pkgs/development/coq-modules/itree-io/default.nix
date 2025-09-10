@@ -5,13 +5,14 @@
   ITree,
   simple-io,
   version ? null,
+  origin ? null,
 }:
 
 mkCoqDerivation {
   pname = "itree-io";
   repo = "coq-itree-io";
   owner = "Lysxia";
-  inherit version;
+  inherit version origin;
 
   defaultVersion =
     let
